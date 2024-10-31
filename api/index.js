@@ -38,4 +38,10 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
+//ewwor handling
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: "Internal Server Error" });
+});
+
 module.exports = app;
