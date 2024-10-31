@@ -9,6 +9,8 @@ const PORT = 3000;
 
 app.use(express.json())
 
+const currentStatus = "Working on the status extension for my website!"
+
 const STATUS_FILE = "status.json";
 const API_KEY = process.env.API_KEY;
 
@@ -37,16 +39,12 @@ app.post("/status", authenticate, (req, res) => {
     const { status } = req.body;
 
     if (!status) {
-        return res.status(400).json({ message: "aww there's no status there :("})
+        return res.status(400).json({ message: "aww there's no status there :(" });
     }
 
-    fs.writeFile(STATUS_FILE, JSON.stringify({ status }), (err) => {
-        if (err) {
-            return res.status(500).json({ message: "just couldn't do it ;("});
-        }
-        res.json({ message: "updated!", status});
-    });
-})
+    currentStatus = status; // Update the in-memory status
+    res.json({ message: "Status updated", status: currentStatus });
+});
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
