@@ -1,0 +1,15 @@
+{
+  "name": "status",
+  "version": "1.0.0",
+  "description": "I'm building an  API that I can use across my websites & other apps to update what I'm doing!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
