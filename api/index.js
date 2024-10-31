@@ -6,6 +6,8 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+
 let currentStatus = "Waiting for a new status update...";
 
 const API_KEY = process.env.API_KEY;
