@@ -16,4 +16,18 @@ curl -X POST https://status.wilkin.xyz/status \
     -d '{"status": "Working on my status API"}'
 ```
 
-doing inital setup in github codespaces cause nvm ain't ballin which is a pain
+# Examples
+## `GET` Status
+`curl https://status-alpha-umber.vercel.app/status`
+returns
+`{"status":"Working on my website"}`
+
+## `POST` Status
+```bash
+curl -X POST https://status-alpha-umber.vercel.app/status \
+    -H "Content-Type: application/json" \
+    -H "x-api-key: apikey" \
+    -d '{"status": "Working on my website"}'
+```
+returns
+`{"message":"yay! status updated!","status":"Working on my website"}`
